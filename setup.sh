@@ -5,6 +5,44 @@
 # Ask for the administrator password upfront.
 sudo -v
 
+
+# Define Function =ask=
+
+ask () {
+  osascript - "${1}" "${2}" "${3}" << EOF 2> /dev/null
+    on run { _title, _action, _default }
+      tell app "System Events" to return text returned of (display dialog _title with title _title buttons { "Cancel", _action } default answer _default)
+    end run
+EOF
+}
+
+# Define Function =ask2=
+
+ask2 () {
+  osascript - "$1" "$2" "$3" "$4" "$5" "$6" << EOF 2> /dev/null
+on run { _text, _title, _cancel, _action, _default, _hidden }
+  tell app "Terminal" to return text returned of (display dialog _text with title _title buttons { _cancel, _action } cancel button _cancel default button _action default answer _default hidden answer _hidden)
+end run
+EOF
+}
+
+# Define Function =p=
+
+p () {
+  printf "\n\033[1m\033[34m%s\033[0m\n\n" "${1}"
+}
+
+# Define Function =run=
+
+run () {
+  osascript - "${1}" "${2}" "${3}" << EOF 2> /dev/null
+    on run { _title, _cancel, _action }
+      tell app "Terminal" to return button returned of (display dialog _title with title _title buttons { _cancel, _action } cancel button 1 default button 2 giving up after 5)
+    end run
+EOF
+}
+
+
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do
     sudo -n true
@@ -25,15 +63,19 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status Bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
+a=$(ask2 "Set Computer Name and Hostname" "Set Hostname" "Cancel" "Set Hostname" $(ruby -e "print '$(hostname -s)'.capitalize") "false")
+  if test -n $a; then
+    sudo scutil --set ComputerName $(ruby -e "print '$a'.capitalize")
+    sudo scutil --set HostName $(ruby -e "print '$a'.downcase")
+  fi
+
 # Check for Homebrew, and then install it
 if test ! "$(which brew)"; then
     echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo "Homebrew installed successfully"
+    echo "Homebrew installed successfully - restart terminal and run the command again"
 else
     echo "Homebrew already installed!"
-fi
-
 # Install XCode Command Line Tools
 echo 'Checking to see if XCode Command Line Tools are installed...'
 brew config
@@ -101,3 +143,4 @@ brew install --cask setapp --appdir="/Applications"
 echo "Running brew cleanup..."
 brew cleanup
 echo "You're done!"
+fi
