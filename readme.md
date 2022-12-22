@@ -11,7 +11,7 @@ Please feel free to fork and/or add issues/PRs to help make this work better for
 To install this script from a brand new Mac (fresh out of the box!) run the following command in terminal:
 
 ``` shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeprivette/new-mac-setup/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/BurnedChris/yanmss/master/setup.sh)"
 ```
 
 **Want to know what ```curl -fsSL``` stands for? Checkout this [link](https://explainshell.com/explain?cmd=curl+-fsSL+example.org#).**
@@ -98,20 +98,6 @@ brew install git
 git clone https://github.com/powerline/fonts.git
 cd fonts
 sh -c ./install.sh
-```
-
-Ruby
-
-``` shell
-brew install ruby
-echo "Adding the brew ruby path to shell config..."
-echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >>~/.bash_profile
-```
-
-[Nmap](https://nmap.org/)
-
-``` shell
-brew install nmap
 ```
 
 [Speedtest-cli](https://github.com/sivel/speedtest-cli)
