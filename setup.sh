@@ -63,6 +63,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status Bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
+# Install Rosetta 2
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+
 a=$(ask2 "Set Computer Name and Hostname" "Set Hostname" "Cancel" "Set Hostname" $(ruby -e "print '$(hostname -s)'.capitalize") "false")
   if test -n $a; then
     sudo scutil --set ComputerName $(ruby -e "print '$a'.capitalize")
@@ -112,11 +115,13 @@ brew install speedtest_cli
 brew install --cask raycast --appdir="/Applications"
 brew install git
 brew install nvm
+https://company.us6.list-manage.com/track/click?u=73c2f0478f1b3cd8343ae8f45&id=98052890dc&e=69fc7857d4
 
 # Development tool casks
 brew install --cask visual-studio-code --appdir="/Applications"
 brew install --cask gitkraken --appdir="/Applications"
 brew install --cask postgres-unofficial --appdir="/Applications"
+brew install --cask fig --appdir="/Applications"
 # snaplet
 curl -sL https://app.snaplet.dev/get-cli/ | bash 
 # doppler
