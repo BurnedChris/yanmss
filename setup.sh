@@ -72,9 +72,9 @@ brew install git
 brew install nvm
 
 # Development tool casks
-brew cask install --appdir="/Applications" visual-studio-code
-brew cask install --appdir="/Applications" gitkraken
-brew cask install --appdir="/Applications" postgres-unofficial
+brew install --cask --appdir="/Applications" visual-studio-code
+brew install --cask --appdir="/Applications" gitkraken
+brew install --cask --appdir="/Applications" postgres-unofficial
 # snaplet
 curl -sL https://app.snaplet.dev/get-cli/ | bash 
 # doppler
@@ -82,17 +82,17 @@ brew install gnupg
 brew install dopplerhq/cli/doppler
 
 # Browsers
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" microsoft-edge
-brew cask install --appdir="/Applications" brave-browser
+brew install --cask --appdir="/Applications" firefox
+brew install --cask --appdir="/Applications" google-chrome
+brew install --cask --appdir="/Applications" microsoft-edge
+brew install --cask --appdir="/Applications" brave-browser
 
 # Team Apps
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" 1password
-brew cask install --appdir="/Applications" linear-linear
-brew cask install --appdir="/Applications" zoom
-brew cask install --appdir="/Applications" around
+brew install --cask --appdir="/Applications" slack
+brew install --cask --appdir="/Applications" 1password
+brew install --cask --appdir="/Applications" linear-linear
+brew install --cask --appdir="/Applications" zoom
+brew install --cask --appdir="/Applications" around
 
 # ThirdParty Apps
 brew install --cask setapp
