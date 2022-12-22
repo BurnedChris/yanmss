@@ -67,14 +67,14 @@ sh -c ./install.sh
 brew install speedtest_cli
 
 # Core casks
-brew cask install --appdir="/Applications" raycast
+brew install --cask raycast --appdir="/Applications"
 brew install git
 brew install nvm
 
 # Development tool casks
-brew install --cask --appdir="/Applications" visual-studio-code
-brew install --cask --appdir="/Applications" gitkraken
-brew install --cask --appdir="/Applications" postgres-unofficial
+brew install --cask visual-studio-code --appdir="/Applications"
+brew install --cask gitkraken --appdir="/Applications"
+brew install --cask postgres-unofficial --appdir="/Applications"
 # snaplet
 curl -sL https://app.snaplet.dev/get-cli/ | bash 
 # doppler
@@ -82,20 +82,20 @@ brew install gnupg
 brew install dopplerhq/cli/doppler
 
 # Browsers
-brew install --cask --appdir="/Applications" firefox
-brew install --cask --appdir="/Applications" google-chrome
-brew install --cask --appdir="/Applications" microsoft-edge
-brew install --cask --appdir="/Applications" brave-browser
+brew install --cask firefox --appdir="/Applications"
+brew install --cask google-chrome --appdir="/Applications"
+brew install --cask microsoft-edge --appdir="/Applications"
+brew install --cask brave-browser --appdir="/Applications"
 
 # Team Apps
-brew install --cask --appdir="/Applications" slack
-brew install --cask --appdir="/Applications" 1password
-brew install --cask --appdir="/Applications" linear-linear
-brew install --cask --appdir="/Applications" zoom
-brew install --cask --appdir="/Applications" around
+brew install --cask slack --appdir="/Applications"
+brew install --cask 1password --appdir="/Applications"
+brew install --cask linear-linear --appdir="/Applications"
+brew install --cask zoom --appdir="/Applications"
+brew install --cask around --appdir="/Applications"
 
 # ThirdParty Apps
-brew install --cask setapp
+brew install --cask setapp --appdir="/Applications"
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
