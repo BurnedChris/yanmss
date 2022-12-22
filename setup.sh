@@ -46,10 +46,6 @@ brew update
 echo "Upgrading Homebrew..."
 brew upgrade
 
-# Install iTerm2
-echo "Installing iTerm2..."
-brew cask install iterm2
-
 # Update the Terminal
 # Install oh-my-zsh
 echo "Installing oh-my-zsh..."
@@ -67,33 +63,38 @@ git clone https://github.com/powerline/fonts.git
 cd fonts || exit
 sh -c ./install.sh
 
-# Install ruby
-if test ! "$(which ruby)"; then
-    echo "Installing Ruby..."
-    brew install ruby
-    echo "Adding the brew ruby path to shell config..."
-    echo 'export PATH='"/usr/local/opt/ruby/bin:$PATH" >>~/.bash_profile
-else
-    echo "Ruby already installed!"
-fi
-
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install nmap
-
 # Install other useful binaries.
 brew install speedtest_cli
 
 # Core casks
-brew cask install --appdir="/Applications" alfred
+brew cask install --appdir="/Applications" raycast
+brew install git
+brew install nvm
 
 # Development tool casks
 brew cask install --appdir="/Applications" visual-studio-code
+brew cask install --appdir="/Applications" gitkraken
+# snaplet
+curl -sL https://app.snaplet.dev/get-cli/ | bash 
+# doppler
+brew install gnupg
+brew install dopplerhq/cli/doppler
 
-# Misc casks
+# Browsers
 brew cask install --appdir="/Applications" firefox
+brew cask install --appdir="/Applications" google-chrome
+brew cask install --appdir="/Applications" microsoft-edge
+brew cask install --appdir="/Applications" brave-browser
+
+# Team Apps
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" 1password
-brew cask install --appdir="/Applications" caffeine
+brew cask install --appdir="/Applications" linear-linear
+brew cask install --appdir="/Applications" zoom
+brew cask install --appdir="/Applications" around
+
+# ThirdParty Apps
+brew install --cask setapp
 
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
