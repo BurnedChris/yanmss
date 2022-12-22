@@ -74,6 +74,7 @@ brew install nvm
 # Development tool casks
 brew cask install --appdir="/Applications" visual-studio-code
 brew cask install --appdir="/Applications" gitkraken
+brew cask install --appdir="/Applications" postgres-unofficial
 # snaplet
 curl -sL https://app.snaplet.dev/get-cli/ | bash 
 # doppler
