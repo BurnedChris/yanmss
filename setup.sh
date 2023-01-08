@@ -112,16 +112,14 @@ sh -c ./install.sh
 brew install speedtest_cli
 
 # Core casks
-brew install --cask raycast --appdir="/Applications"
 brew install git
 brew install nvm
 https://company.us6.list-manage.com/track/click?u=73c2f0478f1b3cd8343ae8f45&id=98052890dc&e=69fc7857d4
 
 # Development tool casks
 brew install --cask visual-studio-code --appdir="/Applications"
-brew install --cask gitkraken --appdir="/Applications"
 brew install --cask postgres-unofficial --appdir="/Applications"
-brew install --cask fig --appdir="/Applications"
+
 # snaplet
 curl -sL https://app.snaplet.dev/get-cli/ | bash 
 # doppler
