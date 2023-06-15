@@ -113,7 +113,6 @@ brew install speedtest_cli
 
 # Core casks
 brew install git
-https://company.us6.list-manage.com/track/click?u=73c2f0478f1b3cd8343ae8f45&id=98052890dc&e=69fc7857d4
 
 # Install nvm and node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
