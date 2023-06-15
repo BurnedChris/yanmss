@@ -157,5 +157,9 @@ brew install --cask setapp --appdir="/Applications"
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
 brew cleanup
+
+# Define useful aliases
+echo "alias rw=\"doppler run -- yarn rw\"" >> ~/.zshrc
+
 echo "You're done!"
 fi
