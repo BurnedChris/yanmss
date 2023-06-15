@@ -113,8 +113,20 @@ brew install speedtest_cli
 
 # Core casks
 brew install git
-brew install nvm
-https://company.us6.list-manage.com/track/click?u=73c2f0478f1b3cd8343ae8f45&id=98052890dc&e=69fc7857d4
+
+# Install nvm and node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm" # Manually load nvm so we don't need to reload the terminal
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm install --lts
+nvm use --lts
+corepack enable # Makes yarn available globally
+
+# Install Everfund project dependencies
+brew install pkg-config cairo pango libpng jpeg giflib librsvg
 
 # Development tool casks
 brew install --cask visual-studio-code --appdir="/Applications"
@@ -145,5 +157,9 @@ brew install --cask setapp --appdir="/Applications"
 # Remove outdated versions from the cellar.
 echo "Running brew cleanup..."
 brew cleanup
+
+# Define useful aliases
+echo "alias rw=\"doppler run -- yarn rw\"" >> ~/.zshrc
+
 echo "You're done!"
 fi
