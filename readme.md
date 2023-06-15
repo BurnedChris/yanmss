@@ -11,7 +11,7 @@ Please feel free to fork and/or add issues/PRs to help make this work better for
 To install this script from a brand new Mac (fresh out of the box!) run the following command in terminal:
 
 ``` shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/BurnedChris/yanmss/master/setup.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/everfund/mac-setup/master/setup.sh)"
 ```
 
 **Want to know what ```curl -fsSL``` stands for? Checkout this [link](https://explainshell.com/explain?cmd=curl+-fsSL+example.org#).**
